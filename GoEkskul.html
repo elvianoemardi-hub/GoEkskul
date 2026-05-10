@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TalentHub SMK 5 - Platform pendaftaran ekstrakurikuler SMK Negeri 5 Surakarta. Daftar eskul favoritmu sekarang!">
+    <meta name="keywords" content="eskul, pendaftaran, SMK 5 Surakarta, ekstrakurikuler, TalentHub">
+    <meta name="author" content="TalentHub SMK 5">
+    <title>GoEkskul SMK 5 | Pendaftaran Eskul</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>GoEkskul <span class="logo-highlight">SMK 5</span></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#eskul">Eskul</a></li>
+                    <li><a href="#pendaftaran">Daftar</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="auth-buttons">
+                <button onclick="login()" class="btn btn-outline">Login</button>
+                <button onclick="signup()" class="btn btn-primary">Signup</button>
+                <button onclick="adminPanel()" class="btn btn-secondary">Admin</button>
+        </div> 
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-overlay">
+                <div class="container hero-content">
+                    <div class="hero-text">
+                        <h1>Bangun Talenta,<br> Raih Prestasi!</h1>
+                        <p>GoEkskul SMK 5 adalah wadah pengembangan bakat dan minat siswa. Temukan ekstrakurikuler yang sesuai dengan passionmu dan kembangkan skill profesional sejak dini.</p>
+                        <div class="hero-buttons">
+                            <a href="#eskul" class="btn btn-primary">Lihat Eskul <i class="fas fa-arrow-right"></i></a>
+                            <a href="#pendaftaran" class="btn btn-outline">Daftar Sekarang</a>
+                        </div>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Eskul Unggulan</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">150+</span>
+                            <span class="stat-label">Siswa Aktif</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Prestasi Nasional</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="eskul" class="eskul-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Pilihan Eskul</span>
+                    <h2>Ekstrakurikuler Favorit</h2>
+                    <p>Pilih ekstrakurikuler yang sesuai dengan minat dan bakatmu. Setiap eskul dibimbing oleh pembina profesional dan memiliki prestasi membanggakan.</p>
+                </div>
+                <div class="eskul-grid" id="eskul-list"></div>
+            </div>
+        </section>
+
+        <section id="pendaftaran" class="form-section">
+            <div class="container">
+                <div class="form-wrapper">
+                    <div class="form-info">
+                        <div class="section-header left-align">
+                            <span class="section-tag">Pendaftaran</span>
+                            <h2>Mulai Perjalananmu</h2>
+                            <p>Isi formulir di bawah ini untuk mendaftar. Kami akan menghubungimu melalui WhatsApp untuk informasi lebih lanjut.</p>
+                        </div>
+                        <div class="info-cards">
+                            <div class="info-card">
+                                <i class="fas fa-calendar-alt"></i>
+                                <div>
+                                    <h4>Pendaftaran</h4>
+                                    <p>1 Juli - 31 Agustus 2026</p>
+                                </div>
+                            </div>
+                            <div class="info-card">
+                                <i class="fas fa-users"></i>
+                                <div>
+                                    <h4>Kuota Terbatas</h4>
+                                    <p>Maksimal 15 siswa per eskul</p>
+                                </div>
+                            </div>
+                            <div class="info-card">
+                                <i class="fab fa-whatsapp"></i>
+                                <div>
+                                    <h4>Konfirmasi</h4>
+                                    <p>Via WhatsApp dalam 3 hari</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-container">
+                        <form id="daftarForm">
+                            <div class="form-group">
+                                <label for="nama"><i class="fas fa-user"></i> Nama Lengkap</label>
+                                <input type="text" id="nama" name="nama" required placeholder="Masukkan nama lengkapmu">
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="nis"><i class="fas fa-id-card"></i> NIS / NISN</label>
+                                    <input type="text" id="nis" name="nis" required placeholder="Nomor Induk Siswa">
+                                </div>
+                                <div class="form-group">
+                                    <label for="kelas"><i class="fas fa-school"></i> Kelas & Jurusan</label>
+                                    <input type="text" id="kelas" name="kelas" required placeholder="Contoh: X TKJ 2">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="wa"><i class="fab fa-whatsapp"></i> No. WhatsApp Aktif</label>
+                                <input type="tel" id="wa" name="wa" required placeholder="08xx-xxxx-xxxx">
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="eskul_utama"><i class="fas fa-star"></i> Eskul Utama</label>
+                                    <select id="eskul_utama" name="eskul_utama" required>
+                                        <option value="">Pilih Eskul Utama</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="eskul_cadangan"><i class="fas fa-exchange-alt"></i> Eskul Cadangan</label>
+                                    <select id="eskul_cadangan" name="eskul_cadangan">
+                                        <option value="">Pilih Eskul Cadangan (Opsional)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="alasan"><i class="fas fa-comment"></i> Alasan Memilih Eskul</label>
+                                <textarea id="alasan" name="alasan" rows="4" placeholder="Ceritakan kenapa kamu ingin bergabung dan apa yang ingin kamu capai..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-full">
+                                <i class="fas fa-paper-plane"></i> Kirim Pendaftaran
+                            </button>
+                        </form>
+
+                        <div class="success" id="successMsg">
+                            <i class="fas fa-check-circle"></i>
+                            <h3>Pendaftaran Berhasil!</h3>
+                            <p>Terima kasih telah mendaftar di GoEkskul SMK 5.<br>Kami akan menghubungi kamu melalui WhatsApp dalam 1x24 jam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>GoEkskul SMK 5</span>
+                    <p>Membangun generasi unggul melalui pengembangan bakat dan minat.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Tautan</h4>
+                    <ul>
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#eskul">Ekstrakurikuler</a></li>
+                        <li><a href="#pendaftaran">Pendaftaran</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Kontak</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Jl. Monginsidi No.45, Surakarta</p>
+                    <p><i class="fas fa-envelope"></i> goekskul@smkn5solo.sch.id</p>
+                    <p><i class="fab fa-instagram"></i> @goekskul_smk5</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 GoEkskul SMK Negeri 5 Surakarta. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Detail Eskul -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="tutupModal()">&times;</span>
+                <img id="modal-image" src="" alt="Foto Kegiatan Eskul">
+                <div class="modal-category" id="modal-category"></div>
+            </div>
+            <div class="modal-body">
+                <h2 id="modal-nama"></h2>
+                <p id="modal-deskripsi"></p>
+                
+                <div class="info-grid">
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Jadwal Latihan</strong>
+                            <span id="modal-jadwal"></span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-chalkboard-user"></i>
+                        <div>
+                            <strong>Pembina</strong>
+                            <span id="modal-pembina"></span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-trophy"></i>
+                        <div>
+                            <strong>Prestasi Terbaru</strong>
+                            <span id="modal-prestasi"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button class="btn btn-secondary" onclick="tutupModal()">Tutup</button>
+                    <button class="btn btn-primary" onclick="daftarDariModal()">
+                        <i class="fas fa-pen"></i> Daftar Eskul Ini
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js.js"></script>
+</body>
+</html>
